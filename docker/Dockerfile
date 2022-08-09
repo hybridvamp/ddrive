@@ -6,9 +6,6 @@ ENV NODE_ENV production
 # Set WORKDIR
 WORKDIR /app
 
-COPY ./services/ui/widget/ /app/
-COPY ./.env /app/
-
 # Copy project files
 COPY --chown=node:node .. /app
 
