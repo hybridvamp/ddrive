@@ -3,13 +3,14 @@ FROM node:16-alpine
 # Set node env
 ENV NODE_ENV production
 
-RUN mkdir app
-
 # Set WORKDIR
-WORKDIR ./app
+WORKDIR /app
+
+COPY ./services/ui/widget/ /app/
+COPY ./.env /app/
 
 # Copy project files
-COPY --chown=node:node .. ./app
+COPY --chown=node:node .. /app
 
 # Install packages
 RUN npm install
