@@ -6,10 +6,10 @@ ENV NODE_ENV production
 RUN mkdir app
 
 # Set WORKDIR
-WORKDIR /app
+WORKDIR ./app
 
 # Copy project files
-COPY --chown=node:node .. /app
+COPY --chown=node:node .. ./app
 
 # Install packages
 RUN npm install
